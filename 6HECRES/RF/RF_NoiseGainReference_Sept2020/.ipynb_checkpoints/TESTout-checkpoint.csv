@@ -1,0 +1,18 @@
+! FILETYPE CSV
+! VERSION 1.0,1
+! TIMESTAMP Monday, 21 September 2020 18:14:45
+! TIMEZONE (GMT-08:00) Pacific Time (US & Canada)
+! NAME Agilent Technologies
+! MODEL N9918A
+! SERIAL MY53103598
+! FIRMWARE_VERSION A.07.57
+! CORRECTION 
+! Trace TIMESTAMP: 2020-09-21 18:14:45Z
+! Trace GPS Info...
+! GPS Latitude: 
+! GPS Longitude: 
+! GPS Seconds Since Last Read: 0
+! CHECKSUM 1980663676
+! DATA Freq,SA Clear-Write,SA Blank,SA Blank,SA Blank
+! FREQ UNIT Hz
+! DATA UNIT dBm
