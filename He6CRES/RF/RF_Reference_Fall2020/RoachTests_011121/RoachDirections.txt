@@ -1,0 +1,33 @@
+ssh drewbyron@10.66.192.31                            #log on to the cave1 server with your username/PW 
+git clone https://github.com/Helium6CRES/He6DAQ.git   #make sure you have the git repo in your home folder
+cd He6DAQ                                             #enter the code repo
+git checkout feature/ADC_vaunix_cal                   #switch to the most recent branch
+sudo ipython3                                         #code will NOT work in python2 (the default ipython)
+from Command_Line_UI import LiveDAQ                   #you'll probably need to do this twice
+CLI = LiveDAQ()                                       #create a command line interface object
+CLI.setup.driver.set_requant_gain(18)                   #gain is set as a power of 2: max is 2**32, min is 2**0
+CLI.daq.save_packets(acquisitions=1, acq_length=500)  #save 1 file with 100 consecutive packets
+
+Additional Commands: 
+
+CLI.peak_find(10)   
+
+If the port is occupied use:
+
+sudo lsof -i :4001
+kill "PID"
+
+
+To copy into your directory: (need vpn active if not in cenpa)
+sudo scp drewbyron@10.66.192.31:/mnt/sdb/data/Freq_data_2021-01-20-11-46-21_000000.spec /home/drew/He6CRES/AnalysisSimulations/SpecFiles
+
+
+
+For katydid: 
+
+sudo ./build/bin/Katydid -c ./Examples/ConfigFiles/SpecSinglePlot.yaml
+
+Other Notes (For now, move these later): 
+
+* Right now there is -70 (external) - 3 (external cable loss) - 24 (CRES signal equivalent) = -97 dB. 
+* So I can comfortably 
